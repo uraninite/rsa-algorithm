@@ -29,11 +29,11 @@ Recipient B does the following:-
 Uses his private key (n,d) to compute m=cdmodn.
 Extracts the plaintext from the message representative m.
  */
-#include <stdio.h>
-#include <stdlib.h>
 #include <iostream>
 #include <windows.h>
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 int prime(int in)
 {
     int key = 0, i, j;
@@ -49,7 +49,7 @@ int prime(int in)
     return key;
 }
 
-int test(int a1, int a2)
+int selecti(int a1, int a2)
 {
     int i;
     do
@@ -107,7 +107,7 @@ int main()
         SetConsoleTextAttribute(hConsole, 10);
         cin >> e;
         SetConsoleTextAttribute(hConsole, 15);
-        k = test(e, n0);
+        k = selecti(e, n0);
         if (k == 0)
             cout << "Input number and " << n0 << " and not mutually prime number!\n";
     }
@@ -164,4 +164,5 @@ int main()
         }
     }
     cin >> i;
+   return 0;
 }
